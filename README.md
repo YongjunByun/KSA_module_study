@@ -1,10 +1,10 @@
 # KSA_PostfixCalculator
-PostfixCalcutlater on Android Studio with java language.
+PostfixCalcutlater on Android Studio with java language.   
 
-[KSA 팀 프로젝트]
-마지막 수정일 : 2021.05.02.
-참여자 : 이철용, 변용준
-
+[KSA 팀 프로젝트]   
+마지막 수정일 : 2021.05.02.   
+참여자 : 이철용, 변용준   
+  
 
 ## 0. 들어가기전
 >본 프로젝트는 후위연산을 사용하여 공학용 계산기 어플을 구현하는 것이다. Postfix클래스에서 등장하는 후위연산 스택 알고리즘은 
