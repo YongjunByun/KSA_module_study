@@ -75,9 +75,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void BtnFactorial(View view) {
         updateText(getResources().getString(R.string.TextFactorial));
+<<<<<<< HEAD
         expression += "(";
         expression += "f";
         expression += ")";
+=======
+>>>>>>> 077949ecaa7b54625af5a06424f35acf17c622c2
     } //팩토리얼 =========================================
 
     public void BtnSquare(View view) {
@@ -222,8 +225,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void calculate() {
+<<<<<<< HEAD
         if (expression.length() > 0 && (Character.isDigit(expression.charAt(expression.length() - 1))
                 || expression.charAt(expression.length() - 1) == ')') && !pause|| expression.charAt(expression.length() - 1) == 'f') {
+=======
+        if (expression.length() > 0 && (Character.isDigit(expression.charAt(expression.length() - 1)) || expression.charAt(expression.length() - 1) == ')') && !pause) {
+>>>>>>> 077949ecaa7b54625af5a06424f35acf17c622c2
             pc = new PostFix(expression);
             calc = new Calculator(pc.getPostfixAsList());
             answer = Double.toString(calc.result());
@@ -266,9 +273,15 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean checkValid(String expression) {
         for (int i = 1; i < expression.length(); i++) {
+<<<<<<< HEAD
             if (expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == '*' || expression.charAt(i) == '/' || expression.charAt(i) == '^' || expression.charAt(i) == 'f' || expression.charAt(i) == 'c'
                     || expression.charAt(i) == 's' || expression.charAt(i) == 't' || expression.charAt(i) == 'l') {
                 if (expression.charAt(i-1) == '+' || expression.charAt(i-1) == '-' || expression.charAt(i-1) == '*' || expression.charAt(i-1) == '/' || expression.charAt(i-1) == '^' || expression.charAt(i-1) == 'f' ||  expression.charAt(i-1) == 'c'
+=======
+            if (expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == '*' || expression.charAt(i) == '/' || expression.charAt(i) == '^' || expression.charAt(i) == 'c'
+                    || expression.charAt(i) == 's' || expression.charAt(i) == 't' || expression.charAt(i) == 'l') {
+                if (expression.charAt(i-1) == '+' || expression.charAt(i-1) == '-' || expression.charAt(i-1) == '*' || expression.charAt(i-1) == '/' || expression.charAt(i-1) == '^' || expression.charAt(i-1) == 'c'
+>>>>>>> 077949ecaa7b54625af5a06424f35acf17c622c2
                         || expression.charAt(i-1) == 's' || expression.charAt(i-1) == 't' || expression.charAt(i-1) == 'l') {
                     clear();
                     TextInput.setText("Error");

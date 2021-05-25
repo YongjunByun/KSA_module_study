@@ -61,20 +61,26 @@ public class Calculator {
                         one = stack.pop();
                         stack.push(Math.log10(one));
                         break;
+<<<<<<< HEAD
                     case "f":
                         one = stack.pop();
                         stack.push(Factorial(one));
                         break;
+=======
+>>>>>>> 077949ecaa7b54625af5a06424f35acf17c622c2
 
                 }
             }
         }
         return stack.pop();
     }
+<<<<<<< HEAD
     public double Factorial(double num){
         if (num <= 1)
             return 1;
         else
             return (num * Factorial(num-1));
     }
+=======
+>>>>>>> 077949ecaa7b54625af5a06424f35acf17c622c2
 }

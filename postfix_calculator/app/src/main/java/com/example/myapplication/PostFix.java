@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
+<<<<<<< HEAD
         public class PostFix {
             private String original;
             private ArrayList<String> postfix = new ArrayList<String>();
@@ -12,6 +13,16 @@ import java.util.StringTokenizer;
             public PostFix(String expression)
             {
                 original = expression;
+=======
+public class PostFix {
+    private String original;
+    private ArrayList<String> postfix = new ArrayList<String>();
+    private Stack<Character> stack = new Stack<>();
+
+    public PostFix(String expression)
+    {
+        original = expression;
+>>>>>>> 077949ecaa7b54625af5a06424f35acf17c622c2
         convertExpression();
     }
 
@@ -30,6 +41,10 @@ import java.util.StringTokenizer;
         addStackToPostFix();
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 077949ecaa7b54625af5a06424f35acf17c622c2
     public void addToStack(char input) {
         if(stack.isEmpty() || input == '(')
             stack.push(input);
@@ -68,8 +83,11 @@ import java.util.StringTokenizer;
                 return 2;
             case '^':
                 return 3;
+<<<<<<< HEAD
             case 'f':
                 return 3;
+=======
+>>>>>>> 077949ecaa7b54625af5a06424f35acf17c622c2
             case 'c':
                 return 3;
             case 's':
