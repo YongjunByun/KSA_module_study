@@ -5,6 +5,7 @@
 
 ## 2. 
 
+학생 정보 저장할 구조체 선언.  
 <pre>
 <code>
 struct student
@@ -18,8 +19,8 @@ struct student
 };
 </pre>
 </code>
-학생 정보 저장할 구조체 선언.  
 
+파일 포인터로 파일을 읽어와 구조체에 학생정보 저장.  
 <pre>
 <code>
 struct student s[total_student];
@@ -39,8 +40,8 @@ for (int i = 0; i <= total_student; i++)
 }
 </pre>
 </code>
-파일 포인터로 파일을 읽어와 구조체에 학생정보 저장.  
 
+학생 검색 구현.  
 <pre>
 <code>
 void SEARCH(student s[total_student])
@@ -121,4 +122,4 @@ void print_profile(student s[total_student],int i)
 }
 </pre>
 </code>
-학생 검색 구현.  
+
