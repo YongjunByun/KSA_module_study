@@ -36,7 +36,7 @@ public:
 
 
 	void CreateBitmapInfo(int w, int h, int bpp); // Bitmap 정보를 생성하는 함수.
-	void DrawImage(); // 그리는 작업을 수행하는 함수.
+	void DrawImage(cv::Mat image); // 그리는 작업을 수행하는 함수.
 	afx_msg void OnBnClickedBtnImageload();
 	afx_msg void OnPaint();
 	CStatic m_pcview;

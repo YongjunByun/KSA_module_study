@@ -1,17 +1,4 @@
-﻿  pch.cpp
-  BitmapCV.cpp
-  BitmapCVDoc.cpp
-  BitmapCVView.cpp
-  ChildFrm.cpp
-  ClassView.cpp
-  COpenCVTestDlg.cpp
-c:\users\byj55\desktop\bitmapcv\bitmapcv\copencvtestdlg.cpp(195): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
-c:\users\byj55\desktop\bitmapcv\bitmapcv\copencvtestdlg.cpp(195): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
-  FileView.cpp
-  MainFrm.cpp
-  OutputWnd.cpp
-  PropertiesWnd.cpp
-  ViewTree.cpp
-  코드를 생성하고 있습니다...
-  LINK : C:\Users\byj55\Desktop\BitmapCV\x64\Debug\BitmapCV.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
-  BitmapCV.vcxproj -> C:\Users\byj55\Desktop\BitmapCV\x64\Debug\BitmapCV.exe
+﻿  COpenCVTestDlg.cpp
+c:\users\byj55\git_workspace\git_bitmapcomb\bitmapcv\bitmapcv\copencvtestdlg.cpp(195): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+c:\users\byj55\git_workspace\git_bitmapcomb\bitmapcv\bitmapcv\copencvtestdlg.cpp(195): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+  BitmapCV.vcxproj -> C:\Users\byj55\git_workspace\git_BitmapComb\BitmapCV\x64\Debug\BitmapCV.exe

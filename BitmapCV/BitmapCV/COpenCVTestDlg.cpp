@@ -84,7 +84,7 @@ void COpenCVTestDlg::CreateBitmapInfo(int w, int h, int bpp)
 }
 
 
-void COpenCVTestDlg::DrawImage()
+void COpenCVTestDlg::DrawImage(cv::Mat image)
 {
 	CClientDC dc(GetDlgItem(IDC_PC_VIEW));
 
@@ -92,8 +92,8 @@ void COpenCVTestDlg::DrawImage()
 	GetDlgItem(IDC_PC_VIEW)->GetClientRect(&rect);
 	
 	SetStretchBltMode(dc.GetSafeHdc(), COLORONCOLOR);
-	StretchDIBits(dc.GetSafeHdc(), 0, 0, m_matImage.cols, m_matImage.rows, 0, 0,
-		m_matImage.cols, m_matImage.rows, m_matImage.data, m_pBitmapInfo, DIB_RGB_COLORS, SRCCOPY);
+	StretchDIBits(dc.GetSafeHdc(), 0, 0, image.cols, image.rows, 0, 0,
+		image.cols, image.rows, image.data, m_pBitmapInfo, DIB_RGB_COLORS, SRCCOPY);
 }
 
 
@@ -111,7 +111,7 @@ void COpenCVTestDlg::OnBnClickedBtnImageload()
 
 		CreateBitmapInfo(m_matImage.cols, m_matImage.rows, m_matImage.channels() * 8);
 
-		DrawImage();
+		DrawImage(m_matImage);
 	}
 }
 
@@ -141,7 +141,6 @@ void COpenCVTestDlg::OnLButtonDown(UINT nFlags, CPoint point)
 	chk = m_check.GetCheck();
 
 	if (chk == 1) { //체크 되어있으면 1 아니면 0
-		//CDC* p = m_pcview.GetWindowDC();
 		SetCapture();
 		m_ptPrev = point;
 	}
@@ -173,12 +172,13 @@ void COpenCVTestDlg::OnMouseMove(UINT nFlags, CPoint point)
 			return;
 
 		CDC* p = m_pcview.GetWindowDC();
-		//CClientDC dc(this);
 		CPen mypen(PS_SOLID, 35, RGB(0, 0, 0));
 		CPen *oldpen = p->SelectObject(&mypen);
-		p->MoveTo(m_ptPrev); //이전 좌표에서
-		p->LineTo(point); //현재 좌표까지 선을 그린다. 
+		p->MoveTo(m_ptPrev.x-30, m_ptPrev.y-30); //이전 좌표에서
+		p->LineTo(point.x-30, point.y-30); //현재 좌표까지 선을 그린다. 
 		m_ptPrev = point;				  // 직선 끝점의 좌표를 갱신한다. 
+		mypen.DeleteObject();
+		ReleaseDC(p);
 	}
 	CDialogEx::OnMouseMove(nFlags, point);
 }
@@ -216,6 +216,8 @@ void COpenCVTestDlg::OnBnClickedBtnMaskedimg()
 		if (m_masked_img1.data[i] != 0)
 			m_masked_img1.data[i] = 255;
 	}
+	ReleaseDC(DC);
+	ReleaseDC(pDC);
 	cv::bitwise_not(m_masked_img1, m_masked_img2);
 }
 
@@ -224,7 +226,7 @@ void COpenCVTestDlg::OnBnClickedBtnMaskedimg2()
 {
 
 	cv::bitwise_and(m_masked_img1, m_matImage, temp1);
-	cv::imwrite("masked3.bmp", temp1);
+	//cv::imwrite("masked3.bmp", temp1);
 
 	CFile File;
 	CFileDialog OpenDlg(TRUE);
@@ -239,5 +241,10 @@ void COpenCVTestDlg::OnBnClickedBtnMaskedimg2()
 	}
 	cv::bitwise_or(temp1, temp2, outputImage);
 	cv::imwrite("output.bmp", outputImage);
+	CreateBitmapInfo(outputImage.cols, outputImage.rows, outputImage.channels() * 8);
+	//picture control 한번 clear하고 그림...(사진 외곽에 brush가 남아있는걸 방지하기 위하여)
+	Invalidate();
+	UpdateWindow();
+	DrawImage(outputImage);
 }
 
