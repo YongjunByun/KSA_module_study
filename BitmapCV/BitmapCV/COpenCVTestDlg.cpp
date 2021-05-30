@@ -108,7 +108,10 @@ void COpenCVTestDlg::OnBnClickedBtnImageload()
 		std::string strPath(pszString);
 
 		m_matImage = imread(strPath, cv::IMREAD_COLOR);
-
+		if (m_matImage.cols > 512 | m_matImage.rows > 512)
+		{
+			resize(m_matImage, m_matImage, cv::Size(512, 512));
+		}
 		CreateBitmapInfo(m_matImage.cols, m_matImage.rows, m_matImage.channels() * 8);
 
 		DrawImage(m_matImage);
@@ -237,6 +240,10 @@ void COpenCVTestDlg::OnBnClickedBtnMaskedimg2()
 		CT2CA pszString(path);
 		std::string strPath(pszString);
 		m_backgroundImage = imread(strPath, cv::IMREAD_COLOR);
+		if (m_backgroundImage.cols > 512 | m_backgroundImage.rows > 512)
+		{
+			resize(m_backgroundImage, m_backgroundImage, cv::Size(512, 512));
+		}
 		cv::bitwise_and(m_masked_img2, m_backgroundImage, temp2);
 	}
 	cv::bitwise_or(temp1, temp2, outputImage);
