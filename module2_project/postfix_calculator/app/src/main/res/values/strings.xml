@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="TextInputHint">Enter a Value</string>
+
+    <string name="TextLeftPar">(</string>
+    <string name="TextRightPar">)</string>
+    <string name="TextLog">log(</string>
+    <string name="TextFactorial">!</string>
+    <string name="TextSquare">^</string>
+
+    <string name="TextSin">sin(</string>
+    <string name="TextCos">cos(</string>
+    <string name="TextTan">tan(</string>
+    <string name="TextClear">C</string>
+    <string name="TextDelete"> </string>
+
+    <string name="TextSeven">7</string>
+    <string name="TextEight">8</string>
+    <string name="TextNine">9</string>
+    <string name="TextSum">+</string>
+
+    <string name="TextFour">4</string>
+    <string name="TextFive">5</string>
+    <string name="TextSix">6</string>
+    <string name="TextMinus">-</string>
+
+    <string name="TextOne">1</string>
+    <string name="TextTwo">2</string>
+    <string name="TextThree">3</string>
+    <string name="TextMul">*</string>
+
+    <string name="TextDot">.</string>
+    <string name="TextZero">0</string>
+    <string name="TextEqual">=</string>
+    <string name="TextDiv">/</string>
+
+</resources>
