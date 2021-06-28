@@ -1,0 +1,5 @@
+﻿  function.cpp
+  main.cpp
+C:\Users\ypopp\source\repos\module1_20210415_test\module1_20210415_test\main.cpp(11,8): warning C4101: 'ofp' :참조되지 않은 지역 변수입니다.
+  코드를 생성하고 있습니다...
+  module1_20210415_test.vcxproj -> C:\Users\ypopp\source\repos\module1_20210415_test\Debug\module1_20210415_test.exe
