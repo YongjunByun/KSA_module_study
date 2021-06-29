@@ -1,1 +1,2 @@
-# KSA_module_study
+# 2021.04 ~ 2021.10 KSA 
+# projects & study codes
