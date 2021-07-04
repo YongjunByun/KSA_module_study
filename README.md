@@ -5,4 +5,4 @@
 - module05_project : 비트맵 합성 프로그램
 - module10 : 비지도 학습 심화 (GAN) codes
 - module11 : 딥러닝 심화 (RNN) codes
-- module12 : 비즈니스 적용 (비정형) codes
+- module12 : 비즈니스 적용 (비정형) codes 
